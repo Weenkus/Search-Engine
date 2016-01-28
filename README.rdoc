@@ -1,28 +1,27 @@
-== README
+== Search Engine
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Search Engine in rails uses PostgreSQL and its advance text searching extensions to build a simple search web app.
+To insert documents into the database use the web app or insert them manually into the database.
 
-Things you may want to cover:
+Version and extensions:
 
-* Ruby version
+* Rails version 4.2.4
 
-* System dependencies
+* PostgreSQL (pg) and PostgreSQL advance text search (pg_search)
 
-* Configuration
+* Running the app will create a base called search_engine_development
 
-* Database creation
+* All versions and dependecies are found in the gemfile (root folder)
 
-* Database initialization
+= How should I use the program?
 
-* How to run the test suite
+To proceed you must install rails, ruby and gem first.
 
-* Services (job queues, cache servers, search engines, etc.)
+Before running the rails server you need to install all the dependecies (gemfile) by running the command (in the root folder) "<em>bundle install</em>".
 
-* Deployment instructions
+To run the program, go to the root directory and run the rails server by typing "<em>rails s</em>" in the console, the console should print the localhost address where the web app is deployed.
 
-* ...
+= Contact
 
+If you have any problems, questions or suggestions send me a mail at vinko.kodzoman@fer.hr
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
