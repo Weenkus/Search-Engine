@@ -23,5 +23,5 @@ To run the program, go to the root directory and run the rails server by typing 
 
 = Contact
 
-If you have any problems, questions or suggestions send me a mail at vinko.kodzoman@fer.hr
+If you have any problems, questions or suggestions send me a mail at mailto:vinko.kodzoman@fer.hr
 
