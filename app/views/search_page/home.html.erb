@@ -1,0 +1,65 @@
+<h1>One click away from the world</h1>
+
+<br> &nbsp;<br>
+<br> &nbsp;<br>
+
+<div id = "search-box">
+	<%= form_tag("/home", method: "post") do %>
+	  <p>
+		<%= text_field_tag('search', nil, class: 'input-xxlarge') %>
+	 
+		<button class="btn" type="submit"><i class="icon-search"></i>Search</button>
+	  </p>
+	  
+	  <p>
+	  	<div class = "box">
+			<%= radio_button_tag(:logic, "and") %>
+			<%= label_tag(:and, "AND") %>
+			<%= radio_button_tag(:logic, "or") %>
+			<%= label_tag(:or, "OR") %>
+		</div>
+		
+		<div class = "box">
+			<%= radio_button_tag(:method, "exact") %>
+			<%= label_tag(:exact, "Exact") %>
+			<%= radio_button_tag(:method, "dictionaries") %>
+			<%= label_tag(:dict, "Use dictionaries") %>
+			<%= radio_button_tag(:method, "fuzzy") %>
+			<%= label_tag(:fuzzy, "Fuzzy") %>
+		</div>
+	
+	  </p>
+	<% end %>
+	
+	
+		<h3>SQL string</h3>
+		<%= @sql %>
+
+	
+	<!-- Debug the search bar -->
+	<!--<pre>
+		<%= @documents.inspect %>
+	</pre>-->
+	
+	<br> &nbsp;<br>
+	
+
+	<!-- Print the results only fi they exist -->
+	<% if @documents.present? %>
+		<h3>Results</h3>
+		<h5>[number of documents retrieved: <%= @documents.length %>]</h5>
+		<br> &nbsp;<br>
+		<div class = "textBox">
+			<table> 		
+			  <!-- Use loop if there are many results -->
+		
+				  <% @documents.each do |document| %>
+					<tr>
+					  <td><%= document[1].html_safe %>&nbsp&nbsp[<%= document[2] %>] <br> &nbsp;<br> </td>
+					</tr>
+				  <% end %>	  
+			</table>
+		</div>
+	<% end %>
+	
+</div>

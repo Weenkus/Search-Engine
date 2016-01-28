@@ -1,0 +1,81 @@
+<h1>I spy with my little eyes...</h1>
+
+<br> &nbsp;<br>
+<br> &nbsp;<br>
+
+<div id = "search-box">
+	<%= form_tag("/anal", method: "post") do %>
+	  <p>
+	  START DATE 
+	  &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp &nbsp; &nbsp;
+
+	  END DATE
+	  </p>
+	  <p>
+		<%= select_date Date.today, prefix: :start_date %>  
+		
+		&nbsp; &nbsp;  &nbsp; &nbsp;
+		 
+		<%= select_date Date.today, prefix: :end_date %>
+		
+		<br> &nbsp;<br>
+		
+	    <div class = "box">
+			<%= radio_button_tag(:time, "day") %>
+			<%= label_tag(:day, "DAY") %>
+			&nbsp;
+			<%= radio_button_tag(:time, "hour") %>
+			<%= label_tag(:hour, "HOUR") %>
+		</div>
+		<button class="btn" type="submit"><i class="icon-search"></i>Search</button>
+	  </p>
+	  
+	  <p>
+	  	
+	
+	  </p>
+	<% end %>
+	
+	<!--<br> &nbsp;<br><td><%= @d1 %><td><%= @d2 %>-->
+	
+	<!--<%= @sql %>
+	<br> &nbsp;<br>
+	<%= @piv %>
+	
+	<pre>
+		<%= @results.inspect %>
+	</pre>-->
+
+	<!-- Print the results only fi they exist -->
+	<% if @results.present? %>
+		<h3>Results</h3>
+		<br> &nbsp;<br>		
+		<div class = "textBox">
+		
+			<table  border="1"> 	
+				<tr>	
+					<% @datesForHTML.each do |h| %>
+						<td> <b><%= h.html_safe %></b> &nbsp;&nbsp;&nbsp;&nbsp; </td> 
+					<% end %>	
+				</tr>
+				<% @results.each do |r| %>
+					<tr>
+						<% r.each do |k| %>
+							<td> 
+								<% if k.nil? %> 
+									<%= 0 %>
+								<% else %>
+									<%= k %>
+								<% end %>
+							</td>
+						<% end %>
+					</tr>
+				<% end %>	 
+			</table>
+			
+		</div>	
+	<% end %>
+	
+</div>
+
+<br> &nbsp;<br><br> &nbsp;<br><br> &nbsp;<br>

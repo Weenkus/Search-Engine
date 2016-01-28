@@ -1,0 +1,13 @@
+<h1>Increase our text corpus</h1>
+<p>Type the text and click submit to add your text to our text library<p>
+
+<%= form_for :document do |f| %>
+  <p>
+    <%= f.label :Text %><br>
+    <%= f.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

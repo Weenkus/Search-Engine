@@ -1,0 +1,12 @@
+<h1>Document database</h1>
+<br> &nbsp;<br>
+
+<div class = "textBox">
+	<table> 
+	  <% @documents.each do |document| %>
+		<tr>
+		  <td><%= document.text %><br> &nbsp;<br> </td>
+		</tr>
+	  <% end %>
+	</table>
+</div>

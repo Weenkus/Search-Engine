@@ -1,0 +1,29 @@
+<h1>Documentation</h1>
+
+<div id= "cesnter-text">
+	<h3> <b>Searching</b> </h3>
+	<p>Separate queries with "<<b>search term</b>>", for example if you want to search for fish and the sea:
+	"fish" "the sea"</p>
+	<br> &nbsp;<br>
+
+	<h3> <b>Customising queries</b> </h3>
+	<h3> AND/OR </h3>
+	<p> Selecting "<b>AND</b>" will look for texts that cointaing all <<b>search term</b>>s that you entered in the search bar. 
+	 "<b>OR</b>" will search for texts that have any of the entered <<b>search term</b>>s.</p>
+
+	<br> &nbsp;<br>
+	<h3> <b>Exact/Use dicitionaries/Fuzzy</b> </h3>
+
+	<h3> Exact </h3>
+	<p>Searchs the text corpus with the exact matches of given <<b>search term</b>>s.</p>
+
+	<h3> Use dicitionaries </h3>
+	<p>Uses <b>PostgreSql</b> dictionary for English language to search for the entered <<b>search term</b>>s.
+	Using the dicitionary allows the search to found similar words or even the same word used in a different form.
+	Example using the <<b>search term</b>> "Happines" can yield results containing the world "Happy".
+
+	<h3> Fuzzy </h3>
+	<p>The fuzzy search uses string similarity algorithmas to find texts that cointain the same or similar <<b>search term</b>>s
+	Fuzzy search is excelent in filtering through typos or finding texts when you are not sure how exactly to spell a word.<p>
+</div>
+
